@@ -31,5 +31,18 @@ public class ProsesTransaksi {
             total += item.getTotal();
         }
         this.total = total;
-    }    
+    }  
+    
+    public String Pembayaran() {
+        setTotal();
+        String pt = "";
+        pt += "Kode\t\t : " + this.kode + "\n";
+        pt += "Daftar Belanja : \n ";
+        for (Item item : this.items) {
+            pt += "\t" + item.getNama() + "(" + item.getJumlah() + ") : " + item.getTotal() +
+                    "\n" ;
+        }
+        pt += "Total\t\t : " + this.total;
+        return pt;
+    }
 }
