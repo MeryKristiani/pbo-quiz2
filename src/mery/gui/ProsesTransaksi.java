@@ -24,4 +24,12 @@ public class ProsesTransaksi {
         this.kode = kode;
         this.items = items;
     }
+    
+    public void setTotal() {
+        float total = 0;
+        for(Item item : this.items) {
+            total += item.getTotal();
+        }
+        this.total = total;
+    }    
 }
